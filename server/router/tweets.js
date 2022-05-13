@@ -14,8 +14,8 @@ let tweets = [
         id: "2",
         text: "ㅎㅇ",
         createdAt: Date.now().toString(),
-        name: "ysh038",
-        username: "ysh038",
+        name: "Ellie",
+        username: "ellie",
         url: "https://picsum.photos/200",
     },
 ];
