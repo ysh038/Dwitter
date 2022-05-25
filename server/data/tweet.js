@@ -3,13 +3,13 @@ import * as userRepository from "./auth.js";
 let tweets = [
     {
         id: "1",
-        text: "화이팅",
+        text: "드림코더분들 화이팅!",
         createdAt: new Date().toString(),
         userId: "1",
     },
     {
         id: "2",
-        text: "ㅎㅇ",
+        text: "안뇽!",
         createdAt: new Date().toString(),
         userId: "1",
     },
@@ -18,7 +18,6 @@ let tweets = [
 export async function getAll() {
     return Promise.all(
         tweets.map(async (tweet) => {
-            console.log(tweet.userId);
             const { username, name, url } = await userRepository.findById(
                 tweet.userId
             );
@@ -44,7 +43,7 @@ export async function getById(id) {
 
 export async function create(text, userId) {
     const tweet = {
-        id: Date.now().toString(),
+        id: new Date().toString(),
         text,
         createdAt: new Date(),
         userId,
@@ -54,7 +53,7 @@ export async function create(text, userId) {
 }
 
 export async function update(id, text) {
-    const tweet = tweets.find((t) => t.id === id);
+    const tweet = tweets.find((tweet) => tweet.id === id);
     if (tweet) {
         tweet.text = text;
     }
