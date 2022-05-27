@@ -7,7 +7,7 @@ export default class Socket {
         });
 
         this.io.on("connect_error", (err) => {
-            console.log("socket error", err.message);
+            console.log("socket error ", err.message);
         });
     }
 
